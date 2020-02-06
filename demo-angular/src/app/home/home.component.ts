@@ -9,28 +9,19 @@ export class HomeComponent extends Observable {
     onfido = false;
     public onfidoSettings: any;
 
-    constructor() {
+    constructor() { 
         super();
-
-        this.onfidoSettings = {
-            applicantId: "APPLICANT_ID",
-            token: "SDK_TOKEN",
-            enable: true,
+        
+        this.onfidoSettings = {                                  
+            token: "YOUR_SDK_TOKEN",
+            document: true,
             responseHandler: (response: any) => {
                 if (response.userCanceled) {
-                    // Flow cancelled by the user
-
                     console.log('user cancelled', response.userCanceled);
-
                 } else if (response.results) {
-                    // User completed the flow
-                    // You can create your check here
                     console.log('user results', response.results);
-
                 } else if (response.error) {
-                    // Some error happened
                     console.log('user error', response.error);
-
                 }
             }
         };

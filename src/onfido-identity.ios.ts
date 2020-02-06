@@ -12,22 +12,26 @@ class OnfidoIdentity extends OnfidoIdentityRoot {
     constructor(settings: any) {
         super(settings);
         this._settings = settings;
-        console.log('ios settings', this._settings);
     }
-
     setup() {
         return new Promise((resolve, reject) => {
             this._configBuilder = ONFlowConfig.builder();
-            this._configBuilder.withToken(this._settings.token);
-            this._configBuilder.withApplicantId(this._settings.applicantId);
-            this._configBuilder.withWelcomeStep();
+            this._configBuilder.withSdkToken(this._settings.token);
+            if(this._settings.welcome) {
+                this._configBuilder.withWelcomeStep();
+            } 
             this._configBuilder.withDocumentStep();
+            if(this._settings.photo) {
+                // configure to add photo step
+            }
+            if(this._settings.video) {
+                // configure to add video step
+            }
             this._config = this._configBuilder.buildAndReturnError(this._configError);
             if (this._configError.value === null) {
                 this._onFlow = ONFlow.alloc().initWithFlowConfiguration(this._config);
                 this._onFlow.withResponseHandler(this._settings.responseHandler);
                 this._onfidoController = this._onFlow.runAndReturnError(this._runError);
-
                 if (this._runError.value == null) {
                     resolve(this._onfidoController);
                 } else {
@@ -47,7 +51,7 @@ export class Onfido extends StackLayout {
             .then((onfido: UIViewController) => {
                 setTimeout(() => {
                     this.rootVC().presentViewControllerAnimatedCompletion(onfido, true, null);
-                }, 100);
+                }, 10);
             }).catch((error: string) => {
                 console.log(`[nativescript-onfido]: ERROR: ${error}`);
             });
