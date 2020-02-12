@@ -1,0 +1,40 @@
+---
+Module:          
+  FullName:        Pods_demoangular
+  IsPartOfFramework: true
+  IsSystemModule:  false
+  Libraries:       
+    - Library:         Pods_demoangular
+      IsFramework:     true
+Items:           
+  - Name:            Pods_demoangularVersionNumber
+    JsName:          Pods_demoangularVersionNumber
+    Filename:        '/Users/ashutec/Public/projects/nativescript-onfido-identity/demo-angular/platforms/ios/build/Debug-iphonesimulator/Pods_demoangular.framework/Headers/Pods-demoangular-umbrella.h'
+    Module:          
+      FullName:        Pods_demoangular
+      IsPartOfFramework: true
+      IsSystemModule:  false
+      Libraries:       
+        - Library:         Pods_demoangular
+          IsFramework:     true
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:       
+      Type:            Double
+  - Name:            Pods_demoangularVersionString
+    JsName:          Pods_demoangularVersionString
+    Filename:        '/Users/ashutec/Public/projects/nativescript-onfido-identity/demo-angular/platforms/ios/build/Debug-iphonesimulator/Pods_demoangular.framework/Headers/Pods-demoangular-umbrella.h'
+    Module:          
+      FullName:        Pods_demoangular
+      IsPartOfFramework: true
+      IsSystemModule:  false
+      Libraries:       
+        - Library:         Pods_demoangular
+          IsFramework:     true
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:       
+      Type:            IncompleteArray
+      ArrayType:       
+        Type:            UChar
+...

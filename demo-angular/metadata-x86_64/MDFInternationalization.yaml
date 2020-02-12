@@ -1,0 +1,151 @@
+---
+Module:          
+  FullName:        MDFInternationalization
+  IsPartOfFramework: true
+  IsSystemModule:  false
+  Libraries:       
+    - Library:         MDFInternationalization
+      IsFramework:     true
+Items:           
+  - Name:            MDFInsetsFlippedHorizontally
+    JsName:          MDFInsetsFlippedHorizontally
+    Filename:        '/Users/ashutec/Public/projects/nativescript-onfido-identity/demo-angular/platforms/ios/build/Debug-iphonesimulator/MDFInternationalization/MDFInternationalization.framework/Headers/MDFRTL.h'
+    Module:          
+      FullName:        MDFInternationalization.MDFRTL
+      IsPartOfFramework: true
+      IsSystemModule:  false
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:       
+      - Type:            Struct
+        Module:          UIKit.UIGeometry
+        JsName:          UIEdgeInsets
+      - Type:            Struct
+        Module:          UIKit.UIGeometry
+        JsName:          UIEdgeInsets
+  - Name:            MDFInsetsMakeWithLayoutDirection
+    JsName:          MDFInsetsMakeWithLayoutDirection
+    Filename:        '/Users/ashutec/Public/projects/nativescript-onfido-identity/demo-angular/platforms/ios/build/Debug-iphonesimulator/MDFInternationalization/MDFInternationalization.framework/Headers/MDFRTL.h'
+    Module:          
+      FullName:        MDFInternationalization.MDFRTL
+      IsPartOfFramework: true
+      IsSystemModule:  false
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:       
+      - Type:            Struct
+        Module:          UIKit.UIGeometry
+        JsName:          UIEdgeInsets
+      - Type:            Double
+      - Type:            Double
+      - Type:            Double
+      - Type:            Double
+      - Type:            Enum
+        Name:            UIUserInterfaceLayoutDirection
+  - Name:            MDFInternationalizationVersionNumber
+    JsName:          MDFInternationalizationVersionNumber
+    Filename:        '/Users/ashutec/Public/projects/nativescript-onfido-identity/demo-angular/platforms/ios/build/Debug-iphonesimulator/MDFInternationalization/MDFInternationalization.framework/Headers/MDFInternationalization.h'
+    Module:          
+      FullName:        MDFInternationalization.MDFInternationalization
+      IsPartOfFramework: true
+      IsSystemModule:  false
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:       
+      Type:            Double
+  - Name:            MDFInternationalizationVersionNumber
+    JsName:          MDFInternationalizationVersionNumberVar
+    Filename:        '/Users/ashutec/Public/projects/nativescript-onfido-identity/demo-angular/platforms/ios/build/Debug-iphonesimulator/MDFInternationalization/MDFInternationalization.framework/Headers/MDFInternationalization-umbrella.h'
+    Module:          
+      FullName:        MDFInternationalization
+      IsPartOfFramework: true
+      IsSystemModule:  false
+      Libraries:       
+        - Library:         MDFInternationalization
+          IsFramework:     true
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:       
+      Type:            Double
+  - Name:            MDFInternationalizationVersionString
+    JsName:          MDFInternationalizationVersionString
+    Filename:        '/Users/ashutec/Public/projects/nativescript-onfido-identity/demo-angular/platforms/ios/build/Debug-iphonesimulator/MDFInternationalization/MDFInternationalization.framework/Headers/MDFInternationalization.h'
+    Module:          
+      FullName:        MDFInternationalization.MDFInternationalization
+      IsPartOfFramework: true
+      IsSystemModule:  false
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:       
+      Type:            IncompleteArray
+      ArrayType:       
+        Type:            UChar
+  - Name:            MDFInternationalizationVersionString
+    JsName:          MDFInternationalizationVersionStringVar
+    Filename:        '/Users/ashutec/Public/projects/nativescript-onfido-identity/demo-angular/platforms/ios/build/Debug-iphonesimulator/MDFInternationalization/MDFInternationalization.framework/Headers/MDFInternationalization-umbrella.h'
+    Module:          
+      FullName:        MDFInternationalization
+      IsPartOfFramework: true
+      IsSystemModule:  false
+      Libraries:       
+        - Library:         MDFInternationalization
+          IsFramework:     true
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:       
+      Type:            IncompleteArray
+      ArrayType:       
+        Type:            UChar
+  - Name:            MDFLeadingMarginAutoresizingMaskForLayoutDirection
+    JsName:          MDFLeadingMarginAutoresizingMaskForLayoutDirection
+    Filename:        '/Users/ashutec/Public/projects/nativescript-onfido-identity/demo-angular/platforms/ios/build/Debug-iphonesimulator/MDFInternationalization/MDFInternationalization.framework/Headers/MDFRTL.h'
+    Module:          
+      FullName:        MDFInternationalization.MDFRTL
+      IsPartOfFramework: true
+      IsSystemModule:  false
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:       
+      - Type:            Enum
+        Name:            UIViewAutoresizing
+      - Type:            Enum
+        Name:            UIUserInterfaceLayoutDirection
+  - Name:            MDFRectFlippedHorizontally
+    JsName:          MDFRectFlippedHorizontally
+    Filename:        '/Users/ashutec/Public/projects/nativescript-onfido-identity/demo-angular/platforms/ios/build/Debug-iphonesimulator/MDFInternationalization/MDFInternationalization.framework/Headers/MDFRTL.h'
+    Module:          
+      FullName:        MDFInternationalization.MDFRTL
+      IsPartOfFramework: true
+      IsSystemModule:  false
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:       
+      - Type:            Struct
+        Module:          CoreGraphics.CGGeometry
+        JsName:          CGRect
+      - Type:            Struct
+        Module:          CoreGraphics.CGGeometry
+        JsName:          CGRect
+      - Type:            Double
+  - Name:            MDFTrailingMarginAutoresizingMaskForLayoutDirection
+    JsName:          MDFTrailingMarginAutoresizingMaskForLayoutDirection
+    Filename:        '/Users/ashutec/Public/projects/nativescript-onfido-identity/demo-angular/platforms/ios/build/Debug-iphonesimulator/MDFInternationalization/MDFInternationalization.framework/Headers/MDFRTL.h'
+    Module:          
+      FullName:        MDFInternationalization.MDFRTL
+      IsPartOfFramework: true
+      IsSystemModule:  false
+      Libraries:       []
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Function
+    Signature:       
+      - Type:            Enum
+        Name:            UIViewAutoresizing
+      - Type:            Enum
+        Name:            UIUserInterfaceLayoutDirection
+...

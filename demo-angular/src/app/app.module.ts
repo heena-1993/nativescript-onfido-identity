@@ -4,7 +4,7 @@ import { registerElement } from 'nativescript-angular';
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-registerElement('Onfido', () => require('nativescript-onfido-identity').Onfido);
+registerElement('Onfido', () => require('nativescript-onfido-identity').OnfidoLayout);
 
 @NgModule({
     bootstrap: [
