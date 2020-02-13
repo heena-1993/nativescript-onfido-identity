@@ -13,13 +13,15 @@ export class HomeComponent extends Observable {
         super();
         
         this.onfidoSettings = {                                  
-            token: "eyJhbGciOiJIUzI1NiJ9.eyJwYXlsb2FkIjoiTVNFMlhOdGpGZk02SWNnUGhaNlViVmZ4aXNLMlJ0eGJ6aVR4MlVha01TUmI4T3Q0VjA1MmRDS0RBTTFpXG5HdTdFSEdVbXJwdTlUREFVc1VXWHJXRGxVeHJMdGUzN3c2SkJJZ01VSkN1b2puazhPSVNXaGMwMGU4QkNcbk94d0FTdkpuXG4iLCJ1dWlkIjoiM2pISFJUZ1RCQVUiLCJleHAiOjE1ODEzNDQ2MzAsInVybHMiOnsib25maWRvX2FwaV91cmwiOiJodHRwczovL2FwaS5vbmZpZG8uY29tIiwidGVsZXBob255X3VybCI6Imh0dHBzOi8vdGVsZXBob255Lm9uZmlkby5jb20iLCJkZXRlY3RfZG9jdW1lbnRfdXJsIjoiaHR0cHM6Ly9zZGsub25maWRvLmNvbSIsInN5bmNfdXJsIjoiaHR0cHM6Ly9zeW5jLm9uZmlkby5jb20iLCJob3N0ZWRfc2RrX3VybCI6Imh0dHBzOi8vaWQub25maWRvLmNvbSJ9fQ.0X_31il9X_2vMng0E_52hVimJOl5jMJMzWy2HSVMO40",
+            token: "eyJhbGciOiJIUzI1NiJ9.eyJwYXlsb2FkIjoiTVNFMlhOdGpGZk02SWNnUGhaNlViVmZ4aXNLMlJ0eGJ6aVR4MlVha01TUmI4T3Q0VjA1MmRDS0RBTTFpXG5HdTdFSEdVbXJwdTlUREFVc1VXWHJXRGxVeHJMdGUzN3c2SkJJZ01VSkN1b2puazhPSVNXaGMwMGU4QkNcbk94d0FTdkpuXG4iLCJ1dWlkIjoiM2pISFJUZ1RCQVUiLCJleHAiOjE1ODE1ODM4MzMsInVybHMiOnsib25maWRvX2FwaV91cmwiOiJodHRwczovL2FwaS5vbmZpZG8uY29tIiwidGVsZXBob255X3VybCI6Imh0dHBzOi8vdGVsZXBob255Lm9uZmlkby5jb20iLCJkZXRlY3RfZG9jdW1lbnRfdXJsIjoiaHR0cHM6Ly9zZGsub25maWRvLmNvbSIsInN5bmNfdXJsIjoiaHR0cHM6Ly9zeW5jLm9uZmlkby5jb20iLCJob3N0ZWRfc2RrX3VybCI6Imh0dHBzOi8vaWQub25maWRvLmNvbSJ9fQ.SALlAQdV5YetDkGbzPmeZ4h3tq48mzYWJdDZQxvYBEE",
             document: true,
+            photo: true,
+            // video: true,
             responseHandler: (response: any) => {
                 if (response.userCanceled) {
                     console.log('user cancelled', response.userCanceled);
                 } else if (response.results) {
-                    console.log('user results', response.results);
+                    console.log('user    results', response.results);
                 } else if (response.error) {
                     console.log('user error', response.error);
                 }

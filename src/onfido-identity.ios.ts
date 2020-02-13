@@ -31,22 +31,21 @@ class OnfidoIdentity extends OnfidoIdentityRoot {
              if (this._settings.document) {
                 this._configBuilder.withDocumentStep();
             }
-            if (this._settings.documentTypeOf) {
-                // configure to add document custom step
-                // this._documentVariantBuilder = ONDocumentTypeVariantConfig.builder();
-                // this._documentVariantBuilder.withDrivingLicence();
-                // const _documentStepVariant = this._documentVariantBuilder.buildAndReturnError(this._documentVariantError);
-                // this._configBuilder.withDocumentStepOfType(_documentStepVariant).andCountryCode('GBR');
-            }
+            /* if (this._settings.documentTypeOf) {
+                this._documentVariantBuilder = ONDocumentTypeVariantConfig.builder();
+                this._documentVariantBuilder.withDrivingLicence();
+                const _documentStepVariant = this._documentVariantBuilder.buildAndReturnError(this._documentVariantError);
+                this._configBuilder.withDocumentStepOfType(_documentStepVariant).andCountryCode('GBR');
+            } */
             if (this._settings.photo) {
-                // configure to add photo step
-                // this._faceVariantBuilder = ONFaceStepVariantConfig.builder();
-                // console.log(this._faceVariantBuilder instanceof Builder);
-                // this._faceVariantBuilder.withPhotoCaptureWithConfig(null);
-                // this._configBuilder.withFaceStepOfVariant(this._faceVariantBuilder.buildAndReturnError(this._faceVariantError));
+                this._faceVariantBuilder = ONFaceStepVariantConfig.builder();
+                this._faceVariantBuilder.withPhotoCaptureWithConfig(null);
+                this._configBuilder.withFaceStepOfVariant(this._faceVariantBuilder.buildAndReturnError(this._faceVariantError));
             }
             if (this._settings.video) {
-                // configure to add video step
+                this._faceVariantBuilder = ONFaceStepVariantConfig.builder();
+                this._faceVariantBuilder.withVideoCaptureWithConfig(VideoStepConfiguration.alloc().initWithShowIntroVideo(true));
+                this._configBuilder.withFaceStepOfVariant(this._faceVariantBuilder.buildAndReturnError(this._faceVariantError));
             }
             this._config = this._configBuilder.buildAndReturnError(this._configError);
             if (this._configError.value === null) {
