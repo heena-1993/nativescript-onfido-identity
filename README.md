@@ -1,4 +1,4 @@
-# nativescript-onfido-identity
+# nativescript-onfido-identity (iOS only for now)
 
 Add your plugin badges here. See [nativescript-urlhandler](https://github.com/hypery2k/nativescript-urlhandler) for example.
 
