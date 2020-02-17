@@ -23,12 +23,12 @@ class OnfidoIdentity extends OnfidoIdentityRoot {
         return new Promise((resolve, reject) => {
             this._configBuilder = ONFlowConfig.builder();
             this._configBuilder.withSdkToken(this._settings.token);
-            // this._configBuilder.withAppearance(ONAppearance.alloc().initWithSupportDarkMode(true));
-            
+            this._configBuilder.withAppearance(ONAppearance.alloc().initWithSupportDarkMode(true));
+
             if (this._settings.welcome) {
                 this._configBuilder.withWelcomeStep();
             }
-             if (this._settings.document) {
+            if (this._settings.document) {
                 this._configBuilder.withDocumentStep();
             }
             /* if (this._settings.documentTypeOf) {
@@ -50,6 +50,7 @@ class OnfidoIdentity extends OnfidoIdentityRoot {
             this._config = this._configBuilder.buildAndReturnError(this._configError);
             if (this._configError.value === null) {
                 this._onFlow = ONFlow.alloc().initWithFlowConfiguration(this._config);
+                // this._onFlow.withResponseHandler(this.responseHandler);
                 this._onFlow.withResponseHandler(this._settings.responseHandler);
                 this._onfidoController = this._onFlow.runAndReturnError(this._runError);
                 if (this._runError.value == null) {
@@ -62,6 +63,39 @@ class OnfidoIdentity extends OnfidoIdentityRoot {
             }
         });
     }
+
+    responseHandler = (response: ONFlowResponse) => {
+        if (response.userCanceled) {
+            console.error('[onfido-result-cancel', response.userCanceled);
+        } else if (response.results) {
+            console.error('[onfido-result-array]', response.results);
+        } else if (response.error) {
+            console.error('[onfido-result-error]', response.error);
+            console.error(response.error.code);
+            switch (response.error.code) {
+                case ONFlowError.CameraPermission:
+                    console.error('It happens if the user denies permission to the sdk during the flow')
+                    break;
+
+                case ONFlowError.MicrophonePermission:
+                    console.error('It happens when the user denies permission for microphone usage by the app during the flow')
+                    break;
+
+                case ONFlowError.Upload:
+                    console.error('It happens when the SDK receives an error from a API call')
+                    break;
+
+                case ONFlowError.Exception:
+                    console.error('It happens when an unexpected error occurs');
+                    console.error(response.error.userInfo);
+                    break;
+
+                case ONFlowError.FailedToWriteToDisk:
+                    console.error('It happens when the SDK tries to save capture to disk, maybe due to a lack of space')
+                    break;
+            }
+        }
+    }
 }
 
 export class OnfidoLayout extends StackLayout {
@@ -72,11 +106,15 @@ export class OnfidoLayout extends StackLayout {
                 setTimeout(() => {
                     this.rootVC().presentViewControllerAnimatedCompletion(onfido, true, null);
                 }, 10);
-            }).catch((error: string) => {
-                console.log(`[nativescript-onfido]: ERROR: ${error}`);
+            }).catch((error) => {
+                settings.errorHandler = this.errorHandler(error);
             });
     }
-
+    errorHandler(error) {
+        return new Promise((resolve, reject) => {
+            resolve(error);
+        });
+    }
     rootVC() {
         let appWindow = UIApplication.sharedApplication.keyWindow;
         return appWindow.rootViewController;
