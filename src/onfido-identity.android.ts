@@ -16,6 +16,7 @@ export class OnfidoIdentity extends OnfidoIdentityRoot {
     results: null,
     error: null
   };
+  private onActivityResultCallback;
   constructor(settings: any) {
     super(settings);
     this.client = OnfidoFactory.create(ctx).getClient();
@@ -32,8 +33,10 @@ export class OnfidoIdentity extends OnfidoIdentityRoot {
       .build();
 
     this.client.startActivityForResult(foregroundActivity, 1, onfidoConfig);
-    Application.android.on(AndroidApplication.activityResultEvent, args =>
-      this.onActivityResult(args)
+    this.onActivityResultCallback = args => this.onActivityResult(args);
+    Application.android.on(
+      AndroidApplication.activityResultEvent,
+      this.onActivityResultCallback
     );
   }
 
@@ -68,8 +71,9 @@ export class OnfidoIdentity extends OnfidoIdentityRoot {
     }
     this._settings.responseHandler(this.onfidoResult);
 
-    Application.android.off(AndroidApplication.activityResultEvent, args =>
-      this.onActivityResult(args)
+    Application.android.off(
+      AndroidApplication.activityResultEvent,
+      this.onActivityResultCallback
     );
   }
 }
