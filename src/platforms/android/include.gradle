@@ -1,6 +1,18 @@
 /* Include.gradle configuration: http://docs.nativescript.org/plugins/plugins#includegradle-specification */
+
+android {
+    defaultConfig { 
+        multiDexEnabled true
+    }
+}
+repositories {
+  maven {
+    url  "https://dl.bintray.com/onfido/maven"
+  }
+}
 dependencies {
   implementation 'com.onfido.sdk.capture:onfido-capture-sdk:+'
   // OR
   // implementation 'com.onfido.sdk.capture:onfido-capture-sdk-core:+'
 }
+
